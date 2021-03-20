@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style> .inputBox .details{
+            font-size: 30px;
+          
+
+        }
+        input{
+            padding: 10px 0;
+        }
+        </style>
+</head>
+<body style="text-align: center; background-color: #1abc9c;">
+    <h1>Sign Up</h1>
+    <div class="container">
+
+        <form action="/signUp" method="POST">
+            <div class="userDetails">
+                <div class="inputBox">
+                    <span class="details">First Name</span>
+                    <input type="text" name="firstname" placeholder="Enter first name" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Last Name</span>
+                    <input type="text" name="lastname" placeholder="Enter last name">
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Email</span>
+                    <input type="text" name="email" placeholder="Enter Your Name" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Password</span>
+                    <input type="Password" name="password" placeholder="Enter Your Password" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" name="confirmpassword" placeholder="Enter Your Password" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Phone No</span>
+                    <input type="text" name="phoneno" placeholder="Enter Phone No" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Date of Birth</span>
+                    <input type="text" name="DoB" placeholder="DD/MM/YEAR" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Upload Your photo</span>
+                    <input type="text" name="photo" placeholder="upload Your Photo" required>
+                </div>
+                <br></br>
+                <div>
+                <input style="padding: 10px 30px; background-color:#2ecc71" type="submit" name="submit" value="Sign Up">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
