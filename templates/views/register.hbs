@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style> .inputBox .details{
-            font-size: 30px;
-          
+            font-size: 30px;  
 
         }
         input{
             padding: 10px 0;
         }
+                nav a{
+            margin: 80px;
+            padding: 10px 50px;
+            background-color: #2ecc71;
+        }
+        .navbartop{
+            background-color: rgb(99, 109, 106);
+            margin-bottom: 80px;
+            width: 100%;
+            line-height: 20vh;
+        }
         </style>
 </head>
 <body style="text-align: center; background-color: #1abc9c;">
-    <h1>Sign Up</h1>
+    <div class="navbartop">
+        <nav>
+        <a href="register"> Register </a>
+       <a href="login"> Login </a>
+    </nav>
+    </div>
     <div class="container">
 
-        <form action="/signUp" method="POST">
+        <form action="/register" method="POST">
             <div class="userDetails">
                 <div class="inputBox">
                     <span class="details">First Name</span>

@@ -5,6 +5,6 @@ mongoose.connect("mongodb://localhost:27017/hammoqAssignmentdb", {
     useCreateIndex:true
 }).then( () => {
     console.log(`connection successful`);
-}).catch( () => {
+}).catch( (err) => {
     console.log(`no connection`);
 })

@@ -23,25 +23,35 @@
         }
         .inputBox .details{
             font-size: 30px;
-          
-
         }
         input{
             padding: 10px 0;
         }
+                nav a{
+            margin: 80px;
+            padding: 10px 50px;
+            background-color: #2ecc71;
+        }
+        .navbartop{
+            background-color: rgb(99, 109, 106);
+            margin-bottom: 80px;
+            width: 100%;
+            line-height: 20vh;
+        }
     </style>
 </head>
 <body style="background-color: #1abc9c; text-align: center;">
-    <div>
-    <div class="mainbody" style="text-align: center;">
-    <span> <a href="signUp">Sign Up</a></span>
-    <span> <a href="login">Login</a></span>
+    
+        <div class="navbartop">
+        <nav>
+        <a href="register"> Register </a>
+       <a href="login"> Login </a>
+    </nav>
     </div>
-
-        
     <div class="container">
-        <div class="title">Registration Form</div>
-        <form action="#">
+        <h1>Hammoq Assignment</h1>
+        
+        {{!-- <form >
             <div class="userDetails">
                 <div class="inputBox">
                     <span class="details">First Name</span>
@@ -56,6 +66,16 @@
                 <div class="inputBox">
                     <span class="details">Email</span>
                     <input type="text" name="email" placeholder="Enter Your Name" required>
+                </div>
+                <br></br>
+                              <div class="inputBox">
+                    <span class="details">Password</span>
+                    <input type="Password" name="password" placeholder="Enter Your Password" required>
+                </div>
+                <br></br>
+                <div class="inputBox">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" name="confirmpassword" placeholder="Enter Your Password" required>
                 </div>
                 <br></br>
                 <div class="inputBox">
@@ -74,10 +94,10 @@
                 </div>
                 <br></br>
                 <div>
-                <input style="padding: 10px 30px; background-color:#2ecc71" type="submit" name="submit" value="Sign Up">
+                <input style="padding: 10px 30px; background-color:#2ecc71" type="submit" name="submit" value="Register">
                 </div>
             </div>
-        </form>
+        </form> --}}
 
     </div>
     </div>

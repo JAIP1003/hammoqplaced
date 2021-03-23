@@ -5,8 +5,7 @@ const hammoqdataSchema = new mongoose.Schema({
         requird : true
     },
     lastname:{
-        type : String,
-        
+        type : String   
     },
     email:{
         type : String,
@@ -15,10 +14,12 @@ const hammoqdataSchema = new mongoose.Schema({
     },
     password:{
         type : String,
+        requird : true
        
     },
     confirmpassword:{
         type : String,
+        requird : true
         
     },
     phoneno:{
@@ -35,6 +36,6 @@ const hammoqdataSchema = new mongoose.Schema({
     }
 })
 
-const SignUp = new mongoose.model("SignUp", hammoqdataSchema );
+const Register = new mongoose.model("Register", hammoqdataSchema );
 
-module.exports = SignUp;
+module.exports = Register;

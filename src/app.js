@@ -6,18 +6,19 @@ const hbs = require("hbs");
 
 
 require("./db/conn");
-const SignUp = require("./models/signUps");
+
+const  Register = require("./models/registers");
+
+
 
 const port = process.env.PORT  || 3000;
 
-const static_path = path.join(__dirname,"../public");
+const static_path = path.join(__dirname, "../public");
+const template_path = path.join(__dirname, "../templates/views");
+const partials_path = path.join(__dirname, "../templates/partials");
 
-const template_path = path.join(__dirname,"../templates/views");
-const partials_path = path.join(__dirname,"../templates/partials");
-//console.log(path.join(__dirname))
-
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+ app.use(express.json());
+ app.use(express.urlencoded({extended:false}));
 
 app.use(express.static(static_path));
 app.set("view engine", "hbs");
@@ -29,21 +30,21 @@ app.get("/", (req, res) =>{
 });
 
 
-app.get("/signUp", (req, res) =>{
-    res.render("signUp")
+app.get("/register", (req, res) =>{
+    res.render("register")
 });
 
 app.get("/login", (req, res) =>{
     res.render("login")
 });
 
-app.post("/signUp", async(req, res) =>{
+app.post("/register", async(req, res) => {
     try{
         const password = req.body.password;
         const cpassword = req.body.confirmpassword;
 
         if( password === cpassword){
-            const resgisternew = new SignUp({
+            const registernew = new Register({
                 firstname : req.body.firstname,
                 lastname : req.body.lastname,
                 email : req.body.email,
@@ -51,10 +52,10 @@ app.post("/signUp", async(req, res) =>{
                 confirmpassword : req.body.confirmpassword,
                 phoneno : req.body.phoneno,
                 DoB : req.body.DoB,
-                photo : req.body.DoB
+                photo : req.body.photo
             })
 
-            const registerd = await resgisternew.save();
+            const registered = await registernew.save();
             res.status(201).render("index");
         }
         else{
@@ -65,6 +66,25 @@ app.post("/signUp", async(req, res) =>{
         res.status(400).send(error);
     }
 })
+
+//   Login check
+
+app.post("/login", async (req, res) =>{
+    try{
+        const email = req.body.email;
+        const password = req.body.password;
+        
+       const useremail = await Register.findOne({email:email});
+       
+       if( useremail.password === password && email === useremail.email){
+           res.status(201).render("index");
+       }else{
+           res.send("invalid details");
+       }
+    } catch(err){
+        res.status(400).send("invalid email")
+    }
+});
 
 app.listen(port, () => {
     console.log(`server is running at port no ${port}`);
