@@ -54,9 +54,8 @@ app.post("/register", async(req, res) => {
                 DoB : req.body.DoB,
                 photo : req.body.photo
             })
-
             const registered = await registernew.save();
-            res.status(201).render("index");
+            res.status(201).render("login");
         }
         else{
             res.send("password are not matching");
@@ -77,7 +76,15 @@ app.post("/login", async (req, res) =>{
        const useremail = await Register.findOne({email:email});
        
        if( useremail.password === password && email === useremail.email){
-           res.status(201).render("index");
+        
+        res.status(201).render("show",{
+            firstname : useremail.firstname,
+            lastname : useremail.lastname,
+            email : useremail.email,
+            DoB : useremail.DoB,
+            photo : useremail.photo
+        }); 
+                
        }else{
            res.send("invalid details");
        }
